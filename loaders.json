@@ -1,0 +1,320 @@
+
+{
+  "loaders": [
+    {
+      "id": "spinner",
+      "name": "Classic Spinner",
+      "category": "spinners",
+      "description": "A simple rotating spinner with customizable colors and size",
+      "html": "<div class=\"spinner\"></div>",
+      "css": ".spinner {\n    width: {size};\n    height: {size};\n    border: {thickness} solid {secondaryColor};\n    border-top: {thickness} solid {primaryColor};\n    border-radius: 50%;\n    animation: spin {speed} linear infinite;\n}\n\n@keyframes spin {\n    0% { transform: rotate(0deg); }\n    100% { transform: rotate(360deg); }\n}",
+      "options": {
+        "primaryColor": { "type": "color", "value": "#6c5ce7", "label": "Primary Color" },
+        "secondaryColor": { "type": "color", "value": "#e0e0e0", "label": "Secondary Color" },
+        "size": {
+          "type": "select",
+          "value": "50px",
+          "label": "Size",
+          "options": [
+            { "value": "30px", "label": "Small (30px)" },
+            { "value": "50px", "label": "Medium (50px)" },
+            { "value": "70px", "label": "Large (70px)" }
+          ]
+        },
+        "speed": {
+          "type": "select",
+          "value": "1s",
+          "label": "Speed",
+          "options": [
+            { "value": "2s", "label": "Slow (2s)" },
+            { "value": "1s", "label": "Normal (1s)" },
+            { "value": "0.5s", "label": "Fast (0.5s)" }
+          ]
+        },
+        "thickness": {
+          "type": "select",
+          "value": "5px",
+          "label": "Thickness",
+          "options": [
+            { "value": "3px", "label": "Thin (3px)" },
+            { "value": "5px", "label": "Medium (5px)" },
+            { "value": "8px", "label": "Thick (8px)" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dual-ring",
+      "name": "Dual Ring Spinner",
+      "category": "spinners",
+      "description": "A spinner with two rotating rings and customizable colors",
+      "html": "<div class=\"dual-ring\"></div>",
+      "css": ".dual-ring {\n    width: {size};\n    height: {size};\n    border: {thickness} solid {secondaryColor};\n    border-top: {thickness} solid {primaryColor};\n    border-bottom: {thickness} solid {primaryColor};\n    border-radius: 50%;\n    animation: spin {speed} linear infinite;\n}",
+      "options": {
+        "primaryColor": { "type": "color", "value": "#6c5ce7", "label": "Primary Color" },
+        "secondaryColor": { "type": "color", "value": "#e0e0e0", "label": "Secondary Color" },
+        "size": {
+          "type": "select",
+          "value": "50px",
+          "label": "Size",
+          "options": [
+            { "value": "30px", "label": "Small (30px)" },
+            { "value": "50px", "label": "Medium (50px)" },
+            { "value": "70px", "label": "Large (70px)" }
+          ]
+        },
+        "speed": {
+          "type": "select",
+          "value": "1s",
+          "label": "Speed",
+          "options": [
+            { "value": "2s", "label": "Slow (2s)" },
+            { "value": "1s", "label": "Normal (1s)" },
+            { "value": "0.5s", "label": "Fast (0.5s)" }
+          ]
+        },
+        "thickness": {
+          "type": "select",
+          "value": "5px",
+          "label": "Thickness",
+          "options": [
+            { "value": "3px", "label": "Thin (3px)" },
+            { "value": "5px", "label": "Medium (5px)" },
+            { "value": "8px", "label": "Thick (8px)" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ellipsis",
+      "name": "Bouncing Dots",
+      "category": "dots",
+      "description": "Three dots that bounce in sequence with customizable colors",
+      "html": "<div class=\"ellipsis\"><div></div><div></div><div></div></div>",
+      "css": ".ellipsis {\n    display: flex;\n    justify-content: center;\n    gap: {gap};\n}\n\n.ellipsis div {\n    width: {dotSize};\n    height: {dotSize};\n    background-color: {primaryColor};\n    border-radius: 50%;\n    animation: bounce {speed} infinite ease-in-out;\n}\n\n.ellipsis div:nth-child(1) {\n    animation-delay: -0.32s;\n}\n\n.ellipsis div:nth-child(2) {\n    animation-delay: -0.16s;\n}\n\n@keyframes bounce {\n    0%, 80%, 100% { transform: scale(0); }\n    40% { transform: scale(1); }\n}",
+      "options": {
+        "primaryColor": { "type": "color", "value": "#6c5ce7", "label": "Dot Color" },
+        "dotSize": {
+          "type": "select",
+          "value": "12px",
+          "label": "Dot Size",
+          "options": [
+            { "value": "8px", "label": "Small (8px)" },
+            { "value": "12px", "label": "Medium (12px)" },
+            { "value": "16px", "label": "Large (16px)" }
+          ]
+        },
+        "speed": {
+          "type": "select",
+          "value": "1.4s",
+          "label": "Speed",
+          "options": [
+            { "value": "2s", "label": "Slow (2s)" },
+            { "value": "1.4s", "label": "Normal (1.4s)" },
+            { "value": "0.8s", "label": "Fast (0.8s)" }
+          ]
+        },
+        "gap": {
+          "type": "select",
+          "value": "8px",
+          "label": "Gap Between Dots",
+          "options": [
+            { "value": "4px", "label": "Small (4px)" },
+            { "value": "8px", "label": "Medium (8px)" },
+            { "value": "12px", "label": "Large (12px)" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ripple",
+      "name": "Ripple Effect",
+      "category": "dots",
+      "description": "A pulsing ripple animation with customizable colors",
+      "html": "<div class=\"ripple\"><div></div><div></div></div>",
+      "css": ".ripple {\n    width: {size};\n    height: {size};\n    position: relative;\n}\n\n.ripple div {\n    position: absolute;\n    border: {thickness} solid {primaryColor};\n    opacity: 1;\n    border-radius: 50%;\n    animation: ripple {speed} cubic-bezier(0, 0.2, 0.8, 1) infinite;\n}\n\n.ripple div:nth-child(2) {\n    animation-delay: -0.5s;\n}\n\n@keyframes ripple {\n    0% {\n        top: calc({size} / 2);\n        left: calc({size} / 2);\n        width: 0;\n        height: 0;\n        opacity: 1;\n    }\n    100% {\n        top: 0;\n        left: 0;\n        width: {size};\n        height: {size};\n        opacity: 0;\n    }\n}",
+      "options": {
+        "primaryColor": { "type": "color", "value": "#6c5ce7", "label": "Ripple Color" },
+        "size": {
+          "type": "select",
+          "value": "50px",
+          "label": "Size",
+          "options": [
+            { "value": "40px", "label": "Small (40px)" },
+            { "value": "50px", "label": "Medium (50px)" },
+            { "value": "60px", "label": "Large (60px)" }
+          ]
+        },
+        "speed": {
+          "type": "select",
+          "value": "1s",
+          "label": "Speed",
+          "options": [
+            { "value": "1.5s", "label": "Slow (1.5s)" },
+            { "value": "1s", "label": "Normal (1s)" },
+            { "value": "0.6s", "label": "Fast (0.6s)" }
+          ]
+        },
+        "thickness": {
+          "type": "select",
+          "value": "3px",
+          "label": "Thickness",
+          "options": [
+            { "value": "2px", "label": "Thin (2px)" },
+            { "value": "3px", "label": "Medium (3px)" },
+            { "value": "4px", "label": "Thick (4px)" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "progress-bar",
+      "name": "Progress Bar",
+      "category": "bars",
+      "description": "A horizontal loading bar that fills and empties",
+      "html": "<div class=\"progress-bar\"><div class=\"progress-bar-fill\"></div></div>",
+      "css": ".progress-bar {\n    width: 100%;\n    height: {thickness};\n    background-color: {secondaryColor};\n    border-radius: 5px;\n    overflow: hidden;\n}\n\n.progress-bar-fill {\n    height: 100%;\n    width: 0%;\n    background-color: {primaryColor};\n    animation: progress {speed} infinite ease-in-out;\n}\n\n@keyframes progress {\n    0% { width: 0%; }\n    50% { width: 100%; }\n    100% { width: 0%; }\n}",
+      "options": {
+        "primaryColor": { "type": "color", "value": "#6c5ce7", "label": "Fill Color" },
+        "secondaryColor": { "type": "color", "value": "#e0e0e0", "label": "Background Color" },
+        "thickness": {
+          "type": "select",
+          "value": "10px",
+          "label": "Thickness",
+          "options": [
+            { "value": "6px", "label": "Thin (6px)" },
+            { "value": "10px", "label": "Medium (10px)" },
+            { "value": "14px", "label": "Thick (14px)" }
+          ]
+        },
+        "speed": {
+          "type": "select",
+          "value": "2s",
+          "label": "Speed",
+          "options": [
+            { "value": "3s", "label": "Slow (3s)" },
+            { "value": "2s", "label": "Normal (2s)" },
+            { "value": "1s", "label": "Fast (1s)" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wave",
+      "name": "Wave Bars",
+      "category": "bars",
+      "description": "Vertical bars that animate in a wave pattern",
+      "html": "<div class=\"wave\"><div></div><div></div><div></div><div></div><div></div></div>",
+      "css": ".wave {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    gap: {gap};\n    height: {height};\n}\n\n.wave div {\n    width: {thickness};\n    height: 100%;\n    background-color: {primaryColor};\n    animation: wave {speed} infinite ease-in-out;\n}\n\n.wave div:nth-child(1) { animation-delay: -0.4s; }\n.wave div:nth-child(2) { animation-delay: -0.2s; }\n.wave div:nth-child(3) { animation-delay: 0s; }\n.wave div:nth-child(4) { animation-delay: -0.2s; }\n.wave div:nth-child(5) { animation-delay: -0.4s; }\n\n@keyframes wave {\n    0%, 40%, 100% { transform: scaleY(0.4); }\n    20% { transform: scaleY(1); }\n}",
+      "options": {
+        "primaryColor": { "type": "color", "value": "#6c5ce7", "label": "Bar Color" },
+        "height": {
+          "type": "select",
+          "value": "50px",
+          "label": "Height",
+          "options": [
+            { "value": "30px", "label": "Small (30px)" },
+            { "value": "50px", "label": "Medium (50px)" },
+            { "value": "70px", "label": "Large (70px)" }
+          ]
+        },
+        "thickness": {
+          "type": "select",
+          "value": "6px",
+          "label": "Thickness",
+          "options": [
+            { "value": "4px", "label": "Thin (4px)" },
+            { "value": "6px", "label": "Medium (6px)" },
+            { "value": "8px", "label": "Thick (8px)" }
+          ]
+        },
+        "gap": {
+          "type": "select",
+          "value": "5px",
+          "label": "Gap Between Bars",
+          "options": [
+            { "value": "3px", "label": "Small (3px)" },
+            { "value": "5px", "label": "Medium (5px)" },
+            { "value": "8px", "label": "Large (8px)" }
+          ]
+        },
+        "speed": {
+          "type": "select",
+          "value": "1.2s",
+          "label": "Speed",
+          "options": [
+            { "value": "1.6s", "label": "Slow (1.6s)" },
+            { "value": "1.2s", "label": "Normal (1.2s)" },
+            { "value": "0.8s", "label": "Fast (0.8s)" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "colorful-spinner",
+      "name": "Colorful Spinner",
+      "category": "creative",
+      "description": "A rainbow-colored spinning loader with customizable colors",
+      "html": "<div class=\"colorful-spinner\"></div>",
+      "css": ".colorful-spinner {\n    width: {size};\n    height: {size};\n    border-radius: 50%;\n    background: conic-gradient(\n        from 0deg,\n        {color1} 0%,\n        {color2} 20%,\n        {color3} 40%,\n        {color4} 60%,\n        {color5} 80%,\n        {color1} 100%\n    );\n    mask: radial-gradient(transparent 40%, black 41%);\n    animation: spin {speed} linear infinite;\n}",
+      "options": {
+        "color1": { "type": "color", "value": "#ff0000", "label": "Color 1" },
+        "color2": { "type": "color", "value": "#ff9900", "label": "Color 2" },
+        "color3": { "type": "color", "value": "#33cc33", "label": "Color 3" },
+        "color4": { "type": "color", "value": "#0099ff", "label": "Color 4" },
+        "color5": { "type": "color", "value": "#6633cc", "label": "Color 5" },
+        "size": {
+          "type": "select",
+          "value": "50px",
+          "label": "Size",
+          "options": [
+            { "value": "40px", "label": "Small (40px)" },
+            { "value": "50px", "label": "Medium (50px)" },
+            { "value": "60px", "label": "Large (60px)" }
+          ]
+        },
+        "speed": {
+          "type": "select",
+          "value": "1s",
+          "label": "Speed",
+          "options": [
+            { "value": "1.5s", "label": "Slow (1.5s)" },
+            { "value": "1s", "label": "Normal (1s)" },
+            { "value": "0.6s", "label": "Fast (0.6s)" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "pulse",
+      "name": "Pulse Loader",
+      "category": "creative",
+      "description": "A simple pulsing circle animation with customizable color",
+      "html": "<div class=\"pulse\"></div>",
+      "css": ".pulse {\n    width: {size};\n    height: {size};\n    background-color: {primaryColor};\n    border-radius: 50%;\n    animation: pulse {speed} infinite ease-out;\n}\n\n@keyframes pulse {\n    0% { transform: scale(0.8); opacity: 0.7; }\n    70% { transform: scale(1.2); opacity: 0.3; }\n    100% { transform: scale(0.8); opacity: 0.7; }\n}",
+      "options": {
+        "primaryColor": { "type": "color", "value": "#6c5ce7", "label": "Pulse Color" },
+        "size": {
+          "type": "select",
+          "value": "50px",
+          "label": "Size",
+          "options": [
+            { "value": "40px", "label": "Small (40px)" },
+            { "value": "50px", "label": "Medium (50px)" },
+            { "value": "60px", "label": "Large (60px)" }
+          ]
+        },
+        "speed": {
+          "type": "select",
+          "value": "1.5s",
+          "label": "Speed",
+          "options": [
+            { "value": "2s", "label": "Slow (2s)" },
+            { "value": "1.5s", "label": "Normal (1.5s)" },
+            { "value": "1s", "label": "Fast (1s)" }
+          ]
+        }
+      }
+    }
+  ]
+}
